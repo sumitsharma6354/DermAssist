@@ -12,7 +12,7 @@ app = Flask(__name__)
 # 1. CONFIGURATION
 # ==========================================
 QDRANT_URL = "https://01316258-dac8-44a6-9cd3-da472e9d12e6.us-east4-0.gcp.cloud.qdrant.io"
-QDRANT_API_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2Nlc3MiOiJtIn0.ZrhpQ1sheNE2d4lhadPSOiw5VmYLN9I1b4U58u-5TLU"
+QDRANT_API_KEY = "your_key"
 COLLECTION_NAME = "healthcare_clip"
 DATASET_DIR = "images"  
 METADATA_PATH = "metadata.csv"
@@ -213,4 +213,5 @@ def analyze():
         return jsonify({"error": str(e)}), 500
 
 if __name__ == '__main__':
+
     app.run(port=5000, debug=True, use_reloader=False)
