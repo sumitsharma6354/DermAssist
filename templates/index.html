@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DermAssist AI | Clinical Decision Support</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="logo-icon">🩺</div>
+                <h1>DermAssist <span>AI</span></h1>
+            </div>
+            <p class="tagline">Neural Network Lesion Analysis</p>
+            
+            <div class="search-tabs">
+                <button class="tab-btn active" onclick="switchTab('image')">📷 Scan</button>
+                <button class="tab-btn" onclick="switchTab('text')">📝 Query</button>
+            </div>
+
+            <div class="upload-section">
+                
+                <div id="image-search-section">
+                    <div class="drop-zone" id="dropZone">
+                        <div class="icon-container">☁️</div>
+                        <span class="drop-text">Upload Scan</span>
+                        <span class="drop-subtext">JPG, PNG supported</span>
+                        <input type="file" id="fileInput" accept="image/*" hidden>
+                    </div>
+
+                    <div id="preview-area" class="hidden">
+                        <img id="userImage" src="" alt="Patient Scan">
+                        <button id="analyzeBtn" class="btn-primary">Run Diagnostics</button>
+                        <button id="resetBtn" class="btn-text">Reset</button>
+                    </div>
+                </div>
+
+                <div id="text-search-section" class="hidden">
+                    <label class="input-label">Describe Case:</label>
+                    <textarea id="textInput" placeholder="e.g. 'Melanoma on male neck' or 'Melanoma patients'"></textarea>
+                    <button id="textSearchBtn" class="btn-primary" style="margin-top: 15px;">Search Database</button>
+                    <p class="hint">Keywords: Melanoma, Male, Female, Neck, Arm, Leg...</p>
+                </div>
+
+            </div>
+        </aside>
+
+        <main class="results-area">
+            <header>
+                <h2>Diagnostic Report</h2>
+                <div class="status-indicator">System Ready <span class="dot"></span></div>
+            </header>
+
+            <div id="loadingState" class="hidden">
+                <div class="loader"></div>
+                <p>Querying 2,900+ Medical Records...</p>
+            </div>
+
+            <div id="emptyState" class="empty-state">
+                <div class="illustration">📊</div>
+                <h3>Waiting for Input</h3>
+                <p>Upload a dermatoscopic image or type a query to search the ISIC Archive.</p>
+            </div>
+
+            <div id="resultsGrid" class="results-grid hidden">
+                </div>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
