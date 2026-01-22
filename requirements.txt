@@ -1,0 +1,6 @@
+flask
+pandas
+sentence-transformers
+pillow
+requests
+numpy
