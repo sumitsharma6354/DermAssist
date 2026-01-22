@@ -4,7 +4,7 @@ from qdrant_client import QdrantClient, models
 # CONFIGURATION
 # ==========================================
 QDRANT_URL = "https://01316258-dac8-44a6-9cd3-da472e9d12e6.us-east4-0.gcp.cloud.qdrant.io"
-QDRANT_API_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2Nlc3MiOiJtIn0.ZrhpQ1sheNE2d4lhadPSOiw5VmYLN9I1b4U58u-5TLU"
+QDRANT_API_KEY = "your_key"
 COLLECTION_NAME = "healthcare_clip"  # Make sure this matches your current collection
 
 # ==========================================
@@ -37,4 +37,5 @@ def create_indexes():
     print("\n🎉 Success! Your database is now ready for filtering.")
 
 if __name__ == "__main__":
+
     create_indexes()
