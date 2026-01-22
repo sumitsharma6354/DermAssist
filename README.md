@@ -33,6 +33,24 @@ Due to the large file size, the image dataset is **not included** in this reposi
 * Rename the folder containing the images to **`images`**.
 * Place the `images` folder inside the root directory of this project.
 
+# Configuration (API Keys)
+To run the Visual Search (AI) feature, you need a free API Key from Qdrant.
+
+Go to Qdrant Cloud and sign up for a free account.
+
+Create a Cluster (Free Tier).
+
+Go to "Data Access Control" and create a new API Key.
+
+Open app.py in this project.
+
+Find the configuration section at the top and paste your URL and Key:
+
+Python
+# In app.py
+QDRANT_URL = "[https://your-cluster-url.qdrant.io](https://your-cluster-url.qdrant.io)"
+QDRANT_API_KEY = "your-generated-api-key-here"
+
  
  # Installation & Setup
 1. Clone the Repository
