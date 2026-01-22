@@ -38,7 +38,7 @@ Due to the large file size, the image dataset is **not included** in this reposi
 1. Clone the Repository
 
 Bash
-git clone https://github.com/sumitsharma6354/DermAssist.git]
+git clone https://github.com/sumitsharma6354/DermAssist.git
 
 2. Install Dependencies
 
